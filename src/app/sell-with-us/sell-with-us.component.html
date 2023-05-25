@@ -1,0 +1,98 @@
+<!-- Contact Start -->
+<div class="container-fluid">
+  <h2 class="mb-5 mt-3">
+    <span class="pr-3">Sell With Us</span>
+  </h2>
+  <div class="container">
+    <div class="contact-form bg-light p-30 m-auto">
+      <form name="sentMessage" id="contactForm" novalidate="novalidate">
+        <label for="image">Product Image</label>
+        <div id="image">
+          <div class="control-group bg-white text-center">
+            <input
+              type="file"
+              (change)="onFileSelected($event)"
+              accept="image/*"
+            />
+          </div>
+          <br />
+          <div class="text-center">
+            <img
+              class="image"
+              [src]="imageUrl"
+              *ngIf="imageUrl"
+              alt="Uploaded Image"
+              width="30%"
+            />
+          </div>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div class="mb-4 mt-4">
+          <hr style="background-color: black" />
+        </div>
+        <div class="control-group">
+          <label for="name">Product Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required="required"
+            data-validation-required-message="Please enter your name"
+          />
+          <p class="help-block text-danger"></p>
+        </div>
+
+        <div class="control-group">
+          <label class="form-label" for="price">Product Price</label>
+          <input
+            type="number"
+            class="form-control"
+            min="0"
+            id="price"
+            required="required"
+            data-validation-required-message="Please enter a subject"
+          />
+          <p class="help-block text-danger"></p>
+        </div>
+        <div class="control-group mb-4">
+          <label class="form-label" for="desc">Product Description</label>
+          <textarea
+            class="form-control"
+            rows="4"
+            id="desc"
+            required="required"
+            data-validation-required-message="Please enter your Product Description"
+          ></textarea>
+        </div>
+        <div class="control-group mb-3">
+          <select class="form-select form-control" #type>
+            <option disabled selected value="">Category</option>
+            <option value="All Items">All Items</option>
+            <option value="men's clothing">men's clothing</option>
+            <option value="women's clothing">women's clothing</option>
+            <option value="electronics">electronics</option>
+            <option value="jewelery">jewelery</option>
+            <option value="Food">Food</option>
+            <option value="kitchen">kitchen</option>
+            <option value="Accessories">Accessories</option>
+          </select>
+        </div>
+
+        <div class="text-end mt-5">
+          <button
+            class="btn btn-primary py-2 px-4"
+            type="submit"
+            id="sendMessageButton"
+            (click)="uploadImage()"
+          >
+            Send Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Contact End -->
+
+<!-- <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+<button (click)="uploadImage()">Upload</button> -->

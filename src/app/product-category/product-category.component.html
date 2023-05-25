@@ -1,0 +1,50 @@
+<div>
+  <div class="text-center banner mt-1 bg-light">
+    <!-- <img class="img-banner rounded-4 bg-light" [src]="products[0].category.cat_banner" /> -->
+  </div>
+  <div class="container-fluid my-5">
+    <div class="input-group mb-3"></div>
+    <br />
+    <div
+      class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-3 g-4 my-4"
+    >
+      <div class="col" *ngFor="let prod of products">
+        <div class="card">
+          <div class="text-center">
+            <a class="">
+              <img
+                [src]="prod.image"
+                class="img"
+                alt="..."
+                height="150vh"
+                [routerLink]="['/product', prod.id]"
+              />
+            </a>
+          </div>
+
+          <div class="badge text-white position-absolute">New</div>
+          <div class="card-body">
+            <div class="mb-2">
+              <span class="float-end price-hp"
+                >{{ prod.discount_price }} &dollar;</span
+              >
+
+              <!-- <span class="text-danger"> <s> Out Of Stock </s> </span> -->
+            </div>
+            <h5 class="card-title">{{ prod.name }}</h5>
+            <p>
+              {{ prod.category.catId }}
+            </p>
+            <app-prouct-rating [rating]="prod.ratings"></app-prouct-rating>
+            <!-- <h6 class="text-success">Free shipping</h6> -->
+            <div class="text-center">
+              <a class="btn" (click)="AddCart(prod)"
+                ><i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

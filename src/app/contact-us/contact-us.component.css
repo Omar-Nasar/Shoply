@@ -1,0 +1,18 @@
+  .fa {
+    color: #ffb24c;
+  }
+
+  .btn-primary {
+    background-color: #f08804;
+  }
+
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #d78519;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }

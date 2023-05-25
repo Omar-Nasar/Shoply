@@ -1,0 +1,124 @@
+<!-- Topbar Start -->
+<div class="container-fluid">
+  <div class="row align-items-center bg-light py-1 px-xl-5 d-none d-lg-flex">
+    <div class="col-lg-4">
+      <a class="nav-logo navbar-btand" [routerLink]="'/'">
+        <img src="assets/sh1.png" width="45px" />
+        <span class="logo1">shoP</span><span class="logo2">ly</span>
+      </a>
+    </div>
+    <div class="col-lg-4 col-6 text-left">
+      <form action="">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search for products"
+          />
+          <div class="input-group-append">
+            <button class="border-0 bg-light">
+              <span class="input-group-text bg-transparent text-primary">
+                <i class="fa fa-search m-1"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="sel-sec col-lg-4 col-6 text-end">
+      <a routerLink="/sell-with-us">
+        <button class="btn">Sell With Us</button>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- Topbar End -->
+
+<!-- Navbar Start -->
+<div class="container-fluid" style="background-color: #232f3e">
+  <div class="row px-xl-5">
+    <div class="col-lg-3 d-none d-lg-block w-25">
+      <a
+        class="btn d-flex align-items-center justify-content-between w-100"
+        data-toggle="collapse"
+        href="#navbar-vertical"
+        style="height: 65px; padding: 0 30px; background-color: #f99614"
+      >
+        <h6 class="text-white m-"><i class="fa fa-bars m-2"></i>Categories</h6>
+        <i class="fa fa-angle-down text-dark"></i>
+      </a>
+      <nav
+        class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
+        id="navbar-vertical"
+        style="width: calc(100% - 30px); z-index: 999"
+      >
+        <div class="navbar-nav w-100">
+          <div class="nav-item dropdown dropright"></div>
+          <!-- <div>
+            <a
+              *ngFor="let cat of categories"
+              class="nav-item nav-link"
+              [routerLink]="['/category', cat._id]"
+              target="_blank"
+              >{{ cat.catId }}</a
+            >
+          </div> -->
+
+          <a href="" class="nav-item nav-link">Jeans</a>
+          <a href="" class="nav-item nav-link">Swimwear</a>
+          <a href="" class="nav-item nav-link">Sleepwear</a>
+          <a href="" class="nav-item nav-link">Sportswear</a>
+          <a href="" class="nav-item nav-link">Jumpsuits</a>
+          <a href="" class="nav-item nav-link">Blazers</a>
+          <a href="" class="nav-item nav-link">Jackets</a>
+          <a href="" class="nav-item nav-link">Shoes</a>
+        </div>
+      </nav>
+    </div>
+    <div class="col-lg-9">
+      <nav class="ll navbar navbar-expand-lg py-3 py-lg-0 px-0">
+        <a class="nav-logo navbar-btand d-block d-lg-none" [routerLink]="'/'">
+          <img src="assets/sh2.png" width="45px" />
+          <span class="logo1" style="color: #f08804">shoP</span
+          ><span class="logo2" style="color: white">ly</span>
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarCollapse"
+        >
+          <div class="navbar-nav mr-auto py-0 text-white">
+            <a routerLink="/" class="nav-item nav-link active">Home</a>
+            <a routerLink="/products" class="nav-item nav-link">Shop</a>
+            <a routerLink="/cart" class="nav-item nav-link">MyCart</a>
+            <a routerLink="/contact" class="nav-item nav-link">Contact</a>
+            <a routerLink="/checkout" class="nav-item nav-link">CheckOut</a>
+          </div>
+          <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+            <div class="icons">
+              <a routerLink="/my-account" class="icons-btn d-inline-block js-search-open"
+                ><span class="fa fa-person"></span
+              ></a>
+              <a href="#" class="icons-btn d-inline-block"
+                ><span class="fa fa-heart"></span>
+              </a>
+              <a routerLink="/cart" class="icons-btn d-inline-block bag">
+                <span class="fa fa-shopping-bag bag"></span>
+                <span class="number">{{ CartCount }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+<!-- Navbar End -->

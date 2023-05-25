@@ -1,0 +1,99 @@
+
+p {
+    color: rgb(122, 122, 121);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: small;
+}
+
+.container-fluid {
+    max-width: 80rem;
+}
+
+.card {
+    background: #fff;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.03);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    border: 0;
+    border-radius: 1rem;
+}
+
+
+.card h5 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 750;
+    font-size: medium
+}
+
+.card-img-top {
+    width: inherit;
+    height: inherit;
+    object-fit: fit;
+}
+
+.btn {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 5px 50px 5px 50px;
+}
+.card .btn{
+    background: none #f08804;
+    color: #ffffff;
+    fill: #ffffff;
+    box-shadow: -1px 6px 19px rgba(247, 129, 10, 0.25);
+    border-radius: 2rem;   
+}
+.card .btn:hover {
+    background: none rgb(189, 124, 3);
+    color: #ffffff;
+    box-shadow: 1px 6px 13px rgba(255, 149, 43, 0.258)
+}
+
+.price-hp {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(102, 102, 102)
+}
+
+.badge {
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: rgb(204, 12, 57);
+}
+
+.badge:hover {
+    cursor: default;
+}
+img{
+    transition: transform .3s;
+    opacity: .9;
+
+}
+img:hover{
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.view-more button {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    margin: 0;
+    background: transparent;
+    border: solid 2px #2b4926;
+    color: #2b4926;
+    letter-spacing: 1px;
+}
+
+.view-more button:hover {
+    background: #508939;
+    color: white;
+}
+.img-fluid{
+    width: auto;
+}
+.cimg-fluid.img{
+    width: 100%;
+}

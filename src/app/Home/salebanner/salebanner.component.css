@@ -1,0 +1,38 @@
+.sale-sec {
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 80px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.421), rgba(0, 0, 0, 0.333)), url("../../../assets/sale.jpg");
+}
+
+.sale-sec .content {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.sale-sec .content h1 {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    letter-spacing: 3px;
+}
+
+.sale-sec .content p {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    letter-spacing: 3px;
+}
+
+.sale-sec button {
+    width: 150px;
+    height: 38px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.sale-sec button:hover {
+    background-color: #ad9e45;
+    border: #ad9e45;
+}

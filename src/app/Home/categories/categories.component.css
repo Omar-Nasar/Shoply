@@ -1,0 +1,28 @@
+.cat-item {
+    background: #FFFFFF;
+    transition: .3s;
+}
+
+.cat-item:hover {
+    background: #ffb24c;
+    color: #FFFFFF;
+}
+
+.cat-item img {
+    transition: .3s;
+}
+
+.cat-item:hover img {
+    transform: scale(1.2) rotate(5deg);
+}
+
+h6{
+    /* font: 1em sans-serif; */
+    /* text-align: center; */
+    /* margin-left: 5px; */
+    font-weight: 500 !important;
+    color: #3D464D;
+}
+.text-body{
+    color: #6C757D !important;
+}

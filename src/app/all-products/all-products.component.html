@@ -1,0 +1,219 @@
+
+<!-- sidebar + content -->
+<section class="my-4">
+  <div class="container">
+    <div class="row">
+      <!-- sidebar -->
+      <div class="col-lg-3">
+        <!-- Toggle button -->
+        <button
+          class="btn btn-outline-secondary mb-3 w-100 d-lg-none"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span>Show filter</span>
+        </button>
+        <!-- Collapsible wrapper -->
+        <!-- <div class="collapse card d-lg-block mb-5" id="navbarSupportedContent">
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button text-dark bg-light"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#panelsStayOpen-collapseTwo"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseTwo"
+                >
+                  Categories
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseTwo"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingTwo"
+              >
+                <div class="accordion-body">
+                  <div>
+                    <!-- Checked checkbox -->
+                    <!-- <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="Men's clothing"
+                        id="flexCheckChecked1"
+                        checked
+                      />
+                      <label class="form-check-label" for="flexCheckChecked1"
+                        >Men's clothing</label
+                      >
+                      <span class="badge badge-secondary float-end">120</span>
+                    </div> -->
+                    <!-- Checked checkbox -->
+                    <!-- <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="woman clothing"
+                        id="flexCheckChecked2"
+                        checked
+                      />
+                      <label class="form-check-label" for="flexCheckChecked2"
+                        >woman clothing</label
+                      >
+                      <span class="badge badge-secondary float-end">15</span>
+                    </div> -->
+                    <!-- Checked checkbox -->
+                    <!-- <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked4"
+                        checked
+                      />
+                      <label class="form-check-label" for="flexCheckChecked4"
+                        >jewelery</label
+                      >
+                      <span class="badge badge-secondary float-end">89</span>
+                    </div> -->
+                    <!-- Default checkbox -->
+                    <!-- <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                        checked
+                      />
+                      <label class="form-check-label" for="flexCheckDefault"
+                        >electronics</label
+                      >
+                      <span class="badge badge-secondary float-end">30</span>
+                    </div> -->
+                    <!-- Default checkbox -->
+                    <!-- <button
+                      class="btn primary-color my-2"
+                      style="font-size: 12px; background-color: #345834"
+                    >
+                      Done
+                    </button> -->
+                  <!-- </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <!-- sidebar -->
+      <!-- content -->
+      <div class="col-lg-9">
+        <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
+          <!-- <strong class="d-block py-2">32 Items found </strong> -->
+          <div class="ms-auto">
+            <p class="h6">Filter By Category:</p>
+            <select
+              class="form-select d-inline-block w-auto border pt-1"
+              #type
+              (change)="onchange(type.value)"
+            >
+              <option value="All Items">All Items</option>
+              <option value="men's clothing">men's clothing</option>
+              <option value="women's clothing">women's clothing</option>
+              <option value="electronics">electronics</option>
+              <option value="jewelery">jewelery</option>
+              <option value="Food">Food</option>
+              <option value="kitchen">kitchen</option>
+              <option value="Accessories">Accessories</option>
+            </select>
+          </div>
+        </header>
+        <div class="spinner">
+          <mat-progress-spinner
+            *ngIf="showspinner"
+            mode="indeterminate"
+          ></mat-progress-spinner>
+        </div>
+        <div
+          *ngIf="showdata"
+          class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-3 g-4 my-4"
+        >
+          <div class="col" *ngFor="let prod of product">
+            <div class="card">
+              <div class="text-center">
+                <a class="">
+                  <img
+                    [src]="prod.image"
+                    class="img"
+                    alt="..."
+                    height="150vh"
+                    [routerLink]="['/products', prod.id]"
+                  />
+                </a>
+              </div>
+
+              <div class="badge text-white position-absolute">New</div>
+              <div class="card-body">
+                <div class="mb-2">
+                  <span class="float-end price-hp"
+                    >{{ prod.discount_price }} &dollar;</span
+                  >
+
+                  <!-- <span class="text-danger"> <s> Out Of Stock </s> </span> -->
+                </div>
+                <h5 class="card-title">{{ prod.name }}</h5>
+                <p>
+                  {{ prod.category.catId }}
+                </p>
+                <app-prouct-rating
+                  [rating]="prod.ratings"
+                ></app-prouct-rating>
+                <!-- <h6 class="text-success">Free shipping</h6> -->
+                <div class="text-center">
+                  <a class="btn" (click)="AddCart(prod)"
+                    ><i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Pagination -->
+        <nav
+          aria-label="Page navigation example"
+          class="d-flex justify-content-center mt-3"
+        >
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Pagination -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- sidebar + content -->

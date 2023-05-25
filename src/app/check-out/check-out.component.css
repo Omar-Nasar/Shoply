@@ -1,0 +1,48 @@
+********************************
+/********** General CSS ***********/
+/**********************************/
+body {
+    color: #353535;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background: #f3f6ff;
+}
+
+a {
+    color: #FF6F61;
+}
+
+.btn-primary {
+    background-color: #f08804;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #d78519;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #353535;
+    outline: none;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 900;
+}
+
+h2 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 700;
+}
+
+@media(min-width: 992px) {
+    .container-fluid {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+}
+

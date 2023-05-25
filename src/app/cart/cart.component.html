@@ -1,0 +1,142 @@
+<section class="bg-light my-5">
+  <div class="container">
+    <div class="row">
+      <!-- cart -->
+      <div class="col-lg-9">
+        <div class="card border shadow-0">
+          <div class="m-4">
+            <h4 class="card-title mb-4">Your shopping cart</h4>
+            <div
+              class="row gy-3 mb-4"
+              *ngFor="let prod_cart of CartItems; let i = index"
+            >
+              <div class="col-lg-5">
+                <div class="me-lg-5">
+                  <div class="d-flex">
+                    <img
+                      [src]="prod_cart.image"
+                      class="rounded me-3"
+                      style="width: 96px; height: 96px"
+                    />
+                    <div class="">
+                      <a href="#" class="nav-link">{{ prod_cart.name }}</a>
+                      <p class="text-muted">{{ prod_cart.main_category }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-lg-2 col-sm-6 col-6 d-flex flex-row flex-lg-column flex-xl-row text-nowrap"
+              >
+                <div class="check_quant">
+                  <button class="btn" (click)="icrement(prod_cart)">
+                    <i class="bi bi-plus-circle"></i>
+                  </button>
+                  <input
+                    readonly
+                    type="number"
+                    style="width: 50px"
+                    class="form-control-sm mx-2"
+                    [value]="prod_cart.rating"
+                    min="1"
+                  />
+                  <button class="btn" (click)="decrement(prod_cart)">
+                    <i class="bi bi-dash-circle"></i>
+                  </button>
+                </div>
+                <div class="">
+                  <span class="h6">${{ prod_cart.price.toFixed(2) }}</span>
+                  <br />
+                  <small class="text-muted text-nowrap">
+                    {{ prod_cart.discount_price }} / per item
+                  </small>
+                </div>
+              </div>
+              <div
+                class="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2"
+              >
+                <div class="float-md-end">
+                  <button
+                    class="btn btn-danger btn-sm mx-2"
+                    (click)="RemoveProduct(prod_cart)"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-top pt-4 mx-4 mb-4">
+            <p>
+              <i class="fas fa-truck text-muted fa-lg"></i> Delivery within 1-2
+              days
+            </p>
+            <!-- <p class="text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip
+            </p> -->
+          </div>
+        </div>
+      </div>
+      <!-- cart -->
+      <!-- summary -->
+      <div class="col-lg-3">
+        <!-- <div class="card mb-3 border shadow-0">
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label class="form-label">Have coupon?</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control border"
+                    name=""
+                    placeholder="Coupon code"
+                  />
+                  <button class="btn btn-light border">Apply</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div> -->
+        <div class="card shadow-0 border">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Total price:</p>
+              <p class="mb-2">${{ TotalPrice.toFixed(2) }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Discount:</p>
+              <p class="mb-2 text-success">---</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Shipping:</p>
+              <p class="mb-2">${{ Tax }}</p>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Total price:</p>
+              <p class="mb-2 fw-bold">${{ TotalPriceAfterTax.toFixed(2) }}</p>
+            </div>
+
+            <div class="mt-3 done">
+              <button class="btn btn-success w-100 shadow-0 mb-2">
+                Make Purchase
+              </button>
+              <button
+                class="back btn w-100 border mt-2"
+                [routerLink]="'/products'"
+              >
+                Back to shop
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- summary -->
+    </div>
+  </div>
+</section>

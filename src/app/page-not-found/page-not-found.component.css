@@ -1,0 +1,15 @@
+body {
+    background: #dedede;
+}
+.page-wrap {
+    min-height: 100vh;
+    color: #232f3e;
+}
+a{
+    color: #f08804;
+    text-decoration: none;
+}
+a:hover{
+    color: #ac5f01;
+    text-decoration: none;
+}

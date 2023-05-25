@@ -1,0 +1,43 @@
+.fa, .fab{
+    color: #f3a239;
+}
+.fa-shopping-cart{
+    color: white;
+}
+.fab:hover, 
+.fab:focus{
+    color: #f58c03;
+}
+h2 {
+    color: #000;
+    font-size: 26px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin: 30px 0 60px;
+}
+
+h2::after {
+    content: "";
+    width: 100px;
+    position: absolute;
+    margin: 0 auto;
+    height: 5px;
+    border-radius: 1px;
+    background: #ffb24c;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+}
+.btn-primary{
+    background-color: #f08804;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus{
+    background-color: #d78519;
+  }
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import 'ngx-toastr/toastr';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"
+
